@@ -1,0 +1,28 @@
+:host {
+  display: contents;
+}
+
+/* this counter taken from https://css-tricks.com/animating-number-counters/ */
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+div {
+  animation: counter 1.5s ease-in-out forwards;
+  counter-reset: num var(--num);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+div::after {
+  content: counter(num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: var(--jackpot);
+  }
+}

@@ -1,0 +1,67 @@
+:host {
+  display: contents;
+  --top-position: 8.4rem;
+}
+.slot-container {
+  position: relative;
+  display: grid;
+  align-items: center;
+  & > * {
+    position: absolute;
+  }
+}
+.game {
+  background-image: url(/slot-1128/game_background.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  aspect-ratio: 16 / 9;
+}
+.scale {
+  scale: 0.5;
+}
+
+.logo {
+  bottom: 2rem;
+  left: 10rem;
+}
+.minus {
+  left: 13.4rem;
+  top: var(--top-position);
+}
+.plus {
+  left: 19.8rem;
+  top: var(--top-position);
+}
+.pay-table {
+  left: 24rem;
+  top: var(--top-position);
+}
+.max-bet {
+  left: 31rem;
+  top: var(--top-position);
+}
+.spin {
+  left: 35.5rem;
+  top: 7.5rem;
+  cursor: pointer;
+}
+.symbols-container {
+  display: flex;
+  overflow: hidden;
+  width: 25.6rem;
+  height: 14.5rem;
+  left: 18.5rem;
+  bottom: -8.5rem;
+}
+.symbols-container.animate img {
+  animation: moving-boxes 1.5s ease-in-out forwards;
+}
+
+@keyframes moving-boxes {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--move-to));
+  }
+}

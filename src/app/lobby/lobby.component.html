@@ -1,0 +1,6 @@
+@if(lobby()){
+<main class="background-image">
+  <app-audio [backgroundMusic]="lobby()!.backgroundMusic"></app-audio>
+  <app-slots [slots]="lobby()!.slots"></app-slots>
+</main>
+}

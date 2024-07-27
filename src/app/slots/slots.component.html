@@ -1,0 +1,46 @@
+<main class="main-slots">
+  <div class="carousel">
+    <img
+      class="navigation-arrow"
+      src="/lobby/arrow-left.png"
+      (click)="navigate('previous')"
+    />
+    <div class="slot-container">
+      @for(slot of sortedSlots() | slice: start:end ; track slot.id){
+      <div class="slot-item">
+        <div class="jackpot">
+          @if(slot.jackpot) {
+          <app-jackpot [jackpot]="slot.jackpot"></app-jackpot>
+          }
+        </div>
+        <div class="slot-image">
+          <img
+            class="clickable-image"
+            [class.locked]="slot.isLocked"
+            [src]="slot.image"
+            [routerLink]="['/slot/' + slot.id.toString()]"
+          />
+          @if(slot.isLocked) {
+          <div class="locked-image">
+            <img src="/lobby/lock.png" />
+          </div>
+          }
+        </div>
+      </div>
+
+      }
+    </div>
+    <img
+      class="navigation-arrow"
+      src="/lobby/arrow-right.png"
+      (click)="navigate('next')"
+    />
+  </div>
+  <div class="bullets">
+    @for(_ of [].constructor(getPages); track i ; let i = $index ){
+    <img
+      [src]="i === position ? '/lobby/bullet-on.png' : '/lobby/bullet-off.png'"
+    />
+    }
+  </div>
+</main>

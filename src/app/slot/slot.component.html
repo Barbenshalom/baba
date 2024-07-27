@@ -1,0 +1,36 @@
+<div class="slot-container">
+  <img class="game" src="/slot-1128/mask_game.png" />
+  <img class="logo scale" src="/slot-1128/logo.png" />
+  <img class="minus scale" src="/slot-1128/but_bet_minus.png" />
+  <img class="plus scale" src="/slot-1128/but_bet_plus.png" />
+  <img class="pay-table scale" src="/slot-1128/but_info_bg.png" />
+  <img class="max-bet scale" src="/slot-1128/but_maxbet_bg.png" />
+  <img class="spin scale" src="/slot-1128/but_spin_bg.png" (click)="spin()" />
+  <div class="symbols-container" [class.animate]="isAnimate">
+    <div class="first-column">
+      @for(symbol of first; track i ; let i = $index){
+      <img [id]="'first-column-' + i" class="" [src]="symbol" />
+      }
+    </div>
+    <div class="second-column">
+      @for(symbol of second; track i ; let i = $index){
+      <img [src]="symbol" />
+      }
+    </div>
+    <div class="third-column">
+      @for(symbol of third; track i ; let i = $index){
+      <img class="animate" [src]="symbol" />
+      }
+    </div>
+    <div class="fourth-column">
+      @for(symbol of fourth; track i ; let i = $index){
+      <img class="animate" [src]="symbol" />
+      }
+    </div>
+    <div class="fifth-column">
+      @for(symbol of fifth; track i ; let i = $index){
+      <img class="animate" [src]="symbol" />
+      }
+    </div>
+  </div>
+</div>
